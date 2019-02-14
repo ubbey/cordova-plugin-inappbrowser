@@ -262,7 +262,16 @@ public class InAppBrowser extends CordovaPlugin {
         }
         else if (action.equals("setCookies")) {
             String cookieUrl = args.getString(0);
-            String[] cookies = webView.getCookieManager().getCookie(args.getString(0)).split(";");
+			String cookieString = args.getString(1);
+			String[] cookies = [];
+			if(cookieString == null) {
+				String cookieStr = webView.getCookieManager().getCookie(cookieUrl);
+				if(cookieStr) {
+					cookies = cookieStr.split(";");
+				} 
+			} else {
+				cookies = cookieString.split(";");
+			}
             for (String cookie: cookies) {
                 CookieManager.getInstance().setCookie(cookieUrl, cookie);
             }
