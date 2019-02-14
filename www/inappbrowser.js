@@ -109,6 +109,7 @@
 		//Gets cookie by Domain from the cordovaWebView and adds it to the inAppWebView.
 		setCookies: function (cookieDetails, cb) {
 			if (cookieDetails.url) {
+				console.log("======写入cookie:========" + cookieDetails.cookie);
 				exec(cb, null, "InAppBrowser", "setCookies", [cookieDetails.url, cookieDetails.cookie, !!cb])
 			} else {
 				throw new Error('setCookie requires a url to be specified')
