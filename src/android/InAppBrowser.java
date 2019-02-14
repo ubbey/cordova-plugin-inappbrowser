@@ -250,6 +250,7 @@ public class InAppBrowser extends CordovaPlugin {
                 }
             });
         }
+<<<<<<< HEAD
 		else if (action.equals("getCookies")) {
             String cookieUrl = args.getString(0);
             String[] cookies = CookieManager.getInstance().getCookie(cookieUrl).split(";");
@@ -270,6 +271,8 @@ public class InAppBrowser extends CordovaPlugin {
             pluginResult.setKeepCallback(true);
             callbackContext.sendPluginResult(pluginResult);
         }
+=======
+>>>>>>> 388e3f6ae74b7c59fee43e360427ab73325f9a77
         else if (action.equals("close")) {
             closeDialog();
         }
